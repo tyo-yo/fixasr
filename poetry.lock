@@ -245,13 +245,13 @@ xxhash = "*"
 apache-beam = ["apache-beam (>=2.26.0)"]
 audio = ["librosa"]
 benchmarks = ["numpy (==1.18.5)", "tensorflow (==2.3.0)", "torch (==1.6.0)", "transformers (==3.0.2)"]
-dev = ["absl-py", "pytest", "pytest-datadir", "pytest-xdist", "apache-beam (>=2.26.0)", "elasticsearch", "aiobotocore", "boto3", "botocore", "faiss-cpu (>=1.6.4)", "fsspec", "moto[s3,server] (==2.0.4)", "rarfile (>=4.0)", "s3fs (==2021.08.1)", "tensorflow (>=2.3)", "torch", "torchaudio", "transformers", "bs4", "conllu", "langdetect", "lxml", "mwparserfromhell", "nltk", "openpyxl", "py7zr", "tldextract", "zstandard", "bert-score (>=0.3.6)", "rouge-score", "sacrebleu", "scipy", "seqeval", "scikit-learn", "jiwer", "sentencepiece", "toml (>=0.10.1)", "requests-file (>=1.5.1)", "tldextract (>=3.1.0)", "texttable (>=1.6.3)", "Werkzeug (>=1.0.1)", "six (>=1.15.0,<1.16.0)", "wget (>=3.2)", "pytorch-nlp (==0.5.0)", "pytorch-lightning", "fastBPE (==0.1.0)", "fairseq", "black (==21.4b0)", "flake8 (==3.7.9)", "isort", "pyyaml (>=5.3.1)", "importlib-resources"]
+dev = ["absl-py", "pytest", "pytest-datadir", "pytest-xdist", "apache-beam (>=2.26.0)", "elasticsearch", "aiobotocore", "boto3", "botocore", "faiss-cpu (>=1.6.4)", "fsspec", "moto[server,s3] (==2.0.4)", "rarfile (>=4.0)", "s3fs (==2021.08.1)", "tensorflow (>=2.3)", "torch", "torchaudio", "transformers", "bs4", "conllu", "langdetect", "lxml", "mwparserfromhell", "nltk", "openpyxl", "py7zr", "tldextract", "zstandard", "bert-score (>=0.3.6)", "rouge-score", "sacrebleu", "scipy", "seqeval", "scikit-learn", "jiwer", "sentencepiece", "toml (>=0.10.1)", "requests-file (>=1.5.1)", "tldextract (>=3.1.0)", "texttable (>=1.6.3)", "Werkzeug (>=1.0.1)", "six (>=1.15.0,<1.16.0)", "wget (>=3.2)", "pytorch-nlp (==0.5.0)", "pytorch-lightning", "fastBPE (==0.1.0)", "fairseq", "black (==21.4b0)", "flake8 (==3.7.9)", "isort", "pyyaml (>=5.3.1)", "importlib-resources"]
 docs = ["docutils (==0.16.0)", "recommonmark", "sphinx (==3.1.2)", "sphinx-markdown-tables", "sphinx-rtd-theme (==0.4.3)", "sphinxext-opengraph (==0.4.1)", "sphinx-copybutton", "fsspec (<2021.9.0)", "s3fs", "sphinx-panels", "sphinx-inline-tabs", "myst-parser"]
 quality = ["black (==21.4b0)", "flake8 (==3.7.9)", "isort", "pyyaml (>=5.3.1)"]
 s3 = ["fsspec", "boto3", "botocore", "s3fs"]
 tensorflow = ["tensorflow (>=2.2.0)"]
 tensorflow_gpu = ["tensorflow-gpu (>=2.2.0)"]
-tests = ["absl-py", "pytest", "pytest-datadir", "pytest-xdist", "apache-beam (>=2.26.0)", "elasticsearch", "aiobotocore", "boto3", "botocore", "faiss-cpu (>=1.6.4)", "fsspec", "moto[s3,server] (==2.0.4)", "rarfile (>=4.0)", "s3fs (==2021.08.1)", "tensorflow (>=2.3)", "torch", "torchaudio", "transformers", "bs4", "conllu", "langdetect", "lxml", "mwparserfromhell", "nltk", "openpyxl", "py7zr", "tldextract", "zstandard", "bert-score (>=0.3.6)", "rouge-score", "sacrebleu", "scipy", "seqeval", "scikit-learn", "jiwer", "sentencepiece", "toml (>=0.10.1)", "requests-file (>=1.5.1)", "tldextract (>=3.1.0)", "texttable (>=1.6.3)", "Werkzeug (>=1.0.1)", "six (>=1.15.0,<1.16.0)", "wget (>=3.2)", "pytorch-nlp (==0.5.0)", "pytorch-lightning", "fastBPE (==0.1.0)", "fairseq", "importlib-resources"]
+tests = ["absl-py", "pytest", "pytest-datadir", "pytest-xdist", "apache-beam (>=2.26.0)", "elasticsearch", "aiobotocore", "boto3", "botocore", "faiss-cpu (>=1.6.4)", "fsspec", "moto[server,s3] (==2.0.4)", "rarfile (>=4.0)", "s3fs (==2021.08.1)", "tensorflow (>=2.3)", "torch", "torchaudio", "transformers", "bs4", "conllu", "langdetect", "lxml", "mwparserfromhell", "nltk", "openpyxl", "py7zr", "tldextract", "zstandard", "bert-score (>=0.3.6)", "rouge-score", "sacrebleu", "scipy", "seqeval", "scikit-learn", "jiwer", "sentencepiece", "toml (>=0.10.1)", "requests-file (>=1.5.1)", "tldextract (>=3.1.0)", "texttable (>=1.6.3)", "Werkzeug (>=1.0.1)", "six (>=1.15.0,<1.16.0)", "wget (>=3.2)", "pytorch-nlp (==0.5.0)", "pytorch-lightning", "fastBPE (==0.1.0)", "fairseq", "importlib-resources"]
 torch = ["torch"]
 
 [[package]]
@@ -560,6 +560,17 @@ MarkupSafe = ">=2.0"
 
 [package.extras]
 i18n = ["Babel (>=2.7)"]
+
+[[package]]
+name = "jiwer"
+version = "2.3.0"
+description = "Evaluate your speech-to-text system with similarity measures such as word error rate (WER)"
+category = "main"
+optional = false
+python-versions = ">=3.6.2,<4.0.0"
+
+[package.dependencies]
+python-Levenshtein = "0.12.2"
 
 [[package]]
 name = "joblib"
@@ -1138,6 +1149,14 @@ python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
 six = ">=1.5"
 
 [[package]]
+name = "python-levenshtein"
+version = "0.12.2"
+description = "Python extension for computing string edit distances and similarities."
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "pytz"
 version = "2021.3"
 description = "World timezone definitions, modern and historical"
@@ -1315,6 +1334,25 @@ cffi = ">=1.0"
 numpy = ["numpy"]
 
 [[package]]
+name = "sudachidict-core"
+version = "20210802.post1"
+description = "Sudachi Dictionary for SudachiPy - Core Edition"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+SudachiPy = ">=0.5,<0.7"
+
+[[package]]
+name = "sudachipy"
+version = "0.6.0"
+description = "Python version of Sudachi, the Japanese Morphological Analyzer"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "terminado"
 version = "0.12.1"
 description = "Tornado websocket backend for the Xterm.js Javascript terminal emulator library."
@@ -1340,6 +1378,28 @@ python-versions = ">= 3.5"
 
 [package.extras]
 test = ["pytest", "pathlib2"]
+
+[[package]]
+name = "textdistance"
+version = "4.2.2"
+description = "Compute distance between the two texts."
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[package.extras]
+dameraulevenshtein = ["jellyfish", "pyxdameraulevenshtein"]
+hamming = ["python-levenshtein", "jellyfish", "distance", "abydos"]
+jaro = ["python-levenshtein"]
+jarowinkler = ["jellyfish"]
+levenshtein = ["python-levenshtein"]
+all = ["abydos", "jellyfish", "numpy", "python-levenshtein", "pyxdameraulevenshtein", "distance", "pylev", "py-stringmatching", "tabulate"]
+benchmark = ["abydos", "jellyfish", "numpy", "python-levenshtein", "pyxdameraulevenshtein", "distance", "pylev", "py-stringmatching", "tabulate"]
+benchmarks = ["abydos", "jellyfish", "numpy", "python-levenshtein", "pyxdameraulevenshtein", "distance", "pylev", "py-stringmatching", "tabulate"]
+common = ["abydos", "jellyfish", "numpy", "python-levenshtein", "pyxdameraulevenshtein"]
+extra = ["abydos", "jellyfish", "numpy", "python-levenshtein", "pyxdameraulevenshtein"]
+extras = ["abydos", "jellyfish", "numpy", "python-levenshtein", "pyxdameraulevenshtein"]
+test = ["hypothesis", "isort", "numpy", "pytest"]
 
 [[package]]
 name = "threadpoolctl"
@@ -1586,7 +1646,7 @@ deepspeed = ["deepspeed"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7"
-content-hash = "3996f02f31c32d9c7f1ffb135ec2802bc6d4a9230757af9ebe0440bc33cf07c1"
+content-hash = "6c8eb4b76d1b9a2e9706f7c5083cbbd8d91fe564738d0bcc83948a750f5d2f3b"
 
 [metadata.files]
 aiohttp = [
@@ -1962,6 +2022,10 @@ jedi = [
 jinja2 = [
     {file = "Jinja2-3.0.3-py3-none-any.whl", hash = "sha256:077ce6014f7b40d03b47d1f1ca4b0fc8328a692bd284016f806ed0eaca390ad8"},
     {file = "Jinja2-3.0.3.tar.gz", hash = "sha256:611bb273cd68f3b993fabdc4064fc858c5b47a973cb5aa7999ec1ba405c87cd7"},
+]
+jiwer = [
+    {file = "jiwer-2.3.0-py3-none-any.whl", hash = "sha256:ef972f8e4feb1b28402d0c0a4350a051e7b41c90119eb1e99d46b4a2002d512f"},
+    {file = "jiwer-2.3.0.tar.gz", hash = "sha256:58cc41d96a1982761114c012b6d559cd9bb092b8e09e76997da168dda3286cbd"},
 ]
 joblib = [
     {file = "joblib-1.1.0-py2.py3-none-any.whl", hash = "sha256:f21f109b3c7ff9d95f8387f752d0d9c34a02aa2f7060c2135f465da0e5160ff6"},
@@ -2454,6 +2518,9 @@ python-dateutil = [
     {file = "python-dateutil-2.8.2.tar.gz", hash = "sha256:0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"},
     {file = "python_dateutil-2.8.2-py2.py3-none-any.whl", hash = "sha256:961d03dc3453ebbc59dbdea9e4e11c5651520a876d0f4db161e8674aae935da9"},
 ]
+python-levenshtein = [
+    {file = "python-Levenshtein-0.12.2.tar.gz", hash = "sha256:dc2395fbd148a1ab31090dd113c366695934b9e85fe5a4b2a032745efd0346f6"},
+]
 pytz = [
     {file = "pytz-2021.3-py2.py3-none-any.whl", hash = "sha256:3672058bc3453457b622aab7a1c3bfd5ab0bdae451512f6cf25f64ed37f5b87c"},
     {file = "pytz-2021.3.tar.gz", hash = "sha256:acad2d8b20a1af07d4e4c9d2e9285c5ed9104354062f275f3fcd88dcef4f1326"},
@@ -2716,6 +2783,27 @@ soundfile = [
     {file = "SoundFile-0.10.3.post1-py2.py3.cp26.cp27.cp32.cp33.cp34.cp35.cp36.pp27.pp32.pp33-none-win_amd64.whl", hash = "sha256:b361d4ac1519a2e516cabafa6bf7e93492f999f35d7d25350cd87fdc3e5cb27e"},
     {file = "SoundFile-0.10.3.post1.tar.gz", hash = "sha256:490cff42650733d1832728b937fe99fa1802896f5ef4d61bcf78cf7ebecb107b"},
 ]
+sudachidict-core = [
+    {file = "SudachiDict-core-20210802.post1.tar.gz", hash = "sha256:a1df2fbdec18e338a9575d080678ee80485bf4691a983b39eaa348a54f7a084d"},
+]
+sudachipy = [
+    {file = "SudachiPy-0.6.0-cp310-cp310-macosx_10_14_x86_64.whl", hash = "sha256:d1ceae235c683844922dbc89757304059bf95bfe4ea973af4049a4481d569418"},
+    {file = "SudachiPy-0.6.0-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:db5215f4653e6827338280870f78aee23a5504f13189b301c8645771e0b0325e"},
+    {file = "SudachiPy-0.6.0-cp310-cp310-win_amd64.whl", hash = "sha256:64811fe31a6bfbd1be04a7cf056a33ccbeb62fa3ee8103360eaee8c0e5f6882f"},
+    {file = "SudachiPy-0.6.0-cp36-cp36m-macosx_10_14_x86_64.whl", hash = "sha256:d542b8012a6899429797f97c7fbb6283123b2cae2a16c11fc397bf13c95ff405"},
+    {file = "SudachiPy-0.6.0-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:1f61dfc745405b2cb14f9ab68f06dea93a61d4cd0b15f8081256c30cb96863b3"},
+    {file = "SudachiPy-0.6.0-cp36-cp36m-win_amd64.whl", hash = "sha256:df5214967e80c8124f83f3a1226c91c3281425a3897b4a9023132c2d7f56043b"},
+    {file = "SudachiPy-0.6.0-cp37-cp37m-macosx_10_14_x86_64.whl", hash = "sha256:63b426db3671ea45907f7517493a40a519bba2b3b85baea17a2d1a2499cbdbaf"},
+    {file = "SudachiPy-0.6.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:bde58820a235f04f0dcba90d10d0fa6144054ace806f3f2c8fd21669a23a1eba"},
+    {file = "SudachiPy-0.6.0-cp37-cp37m-win_amd64.whl", hash = "sha256:6c2d05c1ee8321998e49897a1052725b1d6853e6892dfed7808f3f161dd966af"},
+    {file = "SudachiPy-0.6.0-cp38-cp38-macosx_10_14_x86_64.whl", hash = "sha256:59d393da636189a5b9d777a334946b3c06272b214956c6394409114c806abb53"},
+    {file = "SudachiPy-0.6.0-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:5d7ae02ae14cd34ff51999c0b537f8b169043b141b27c765721c6b3bfc3a687e"},
+    {file = "SudachiPy-0.6.0-cp38-cp38-win_amd64.whl", hash = "sha256:f9946296dfbc8e2b3fec557a9859f86b01fdf08a9bc72006a81980505503632a"},
+    {file = "SudachiPy-0.6.0-cp39-cp39-macosx_10_14_x86_64.whl", hash = "sha256:1989092e8bf43f79dd6957e820eaa3aa7e0e9b5833fa769431658b3d3dc93cbe"},
+    {file = "SudachiPy-0.6.0-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:7bd8d359987534684da15db0734cc00ee6d174c85253ac7c8add00352aceeb5c"},
+    {file = "SudachiPy-0.6.0-cp39-cp39-win_amd64.whl", hash = "sha256:f8590d81af2a999006d5692bf40b4c8fcc5ac3c1f9a85de6238e2afbc932ff2d"},
+    {file = "SudachiPy-0.6.0.tar.gz", hash = "sha256:1bf682e8b2baf597a5c67f494e2be00eb0f1ad00ceefb831e86050c20d033fe4"},
+]
 terminado = [
     {file = "terminado-0.12.1-py3-none-any.whl", hash = "sha256:09fdde344324a1c9c6e610ee4ca165c4bb7f5bbf982fceeeb38998a988ef8452"},
     {file = "terminado-0.12.1.tar.gz", hash = "sha256:b20fd93cc57c1678c799799d117874367cc07a3d2d55be95205b1a88fa08393f"},
@@ -2723,6 +2811,10 @@ terminado = [
 testpath = [
     {file = "testpath-0.5.0-py3-none-any.whl", hash = "sha256:8044f9a0bab6567fc644a3593164e872543bb44225b0e24846e2c89237937589"},
     {file = "testpath-0.5.0.tar.gz", hash = "sha256:1acf7a0bcd3004ae8357409fc33751e16d37ccc650921da1094a86581ad1e417"},
+]
+textdistance = [
+    {file = "textdistance-4.2.2-py3-none-any.whl", hash = "sha256:b278ad944525e5beb117af90d72d579225eb2d20b26f78d4c13fd96514174d98"},
+    {file = "textdistance-4.2.2.tar.gz", hash = "sha256:a43bb6f71dcccd3fc2060065c9513a7927879680512889749fd1fd800c4bad8e"},
 ]
 threadpoolctl = [
     {file = "threadpoolctl-3.0.0-py3-none-any.whl", hash = "sha256:4fade5b3b48ae4b1c30f200b28f39180371104fccc642e039e0f2435ec8cc211"},

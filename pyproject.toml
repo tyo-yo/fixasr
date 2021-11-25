@@ -14,6 +14,10 @@ torchaudio = "^0.10.0"
 jupyterlab = "^3.2.4"
 ipywidgets = "^7.6.5"
 deepspeed = {version = "^0.5.7", optional = true}
+SudachiPy = "^0.6.0"
+SudachiDict-core = "^20210802.post1"
+textdistance = {extras = ["Levenshtein"], version = "^4.2.2"}
+jiwer = "^2.3.0"
 
 [tool.poetry.dev-dependencies]
 
