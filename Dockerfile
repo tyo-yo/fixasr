@@ -1,4 +1,4 @@
-FROM nvidia/cuda:10.2-devel-ubuntu18.04
+FROM nvidia/cuda:11.3.0-devel-ubuntu20.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 WORKDIR /tmp/
@@ -15,7 +15,8 @@ RUN apt-get update && apt-get install -y \
     # MeCab
     mecab \
     libmecab-dev \
-    tmux
+    tmux \
+    git-lfs
 
 # Install Python
 RUN wget https://www.python.org/ftp/python/3.7.10/Python-3.7.10.tgz && \
