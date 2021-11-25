@@ -28,7 +28,7 @@ RUN ./configure && \
 WORKDIR /usr/local/bin
 RUN ln -s python3.7 python
 
-ENV WORKDIR /poc_qa/
+ENV WORKDIR /workspace/
 WORKDIR ${WORKDIR}
 
 # Python の依存ライブラリ管理ツールpoetryをインストール
@@ -47,11 +47,11 @@ RUN poetry install --no-root
 # jupyter上でhboxを表示するため
 # https://stackoverflow.com/questions/57343134/jupyter-notebooks-not-displaying-progress-bars
 # https://qiita.com/seibe/items/36cef7df85fe2cefa3ea
-RUN apt-get update & apt-get install -y nodejs npm ;\
-    npm install n -g ;\
-    n stable ;\
-    apt-get purge -y nodejs npm ;\
-    jupyter nbextension enable --py widgetsnbextension ;\
-    jupyter labextension install @jupyter-widgets/jupyterlab-manager
+# RUN apt-get update & apt-get install -y nodejs npm ;\
+#     npm install n -g ;\
+#     n stable ;\
+#     apt-get purge -y nodejs npm ;\
+#     jupyter nbextension enable --py widgetsnbextension ;\
+#     jupyter labextension install @jupyter-widgets/jupyterlab-manager
 
 
