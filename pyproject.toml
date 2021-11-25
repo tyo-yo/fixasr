@@ -6,8 +6,19 @@ authors = ["Tomoaki Nakamura <tyo_yo@icloud.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
+torch = "^1.10.0"
+transformers = "^4.12.5"
+datasets = "^1.15.1"
+librosa = "^0.8.1"
+torchaudio = "^0.10.0"
+jupyterlab = "^3.2.4"
+ipywidgets = "^7.6.5"
+deepspeed = {version = "^0.5.7", optional = true}
 
 [tool.poetry.dev-dependencies]
+
+[tool.poetry.extras]
+deepspeed = ["deepspeed"]
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
