@@ -14,7 +14,8 @@ RUN apt-get update && apt-get install -y \
     zlib1g-dev uuid-dev tk-dev \
     # MeCab
     mecab \
-    libmecab-dev
+    libmecab-dev \
+    tmux
 
 # Install Python
 RUN wget https://www.python.org/ftp/python/3.7.10/Python-3.7.10.tgz && \
